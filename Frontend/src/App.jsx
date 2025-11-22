@@ -37,24 +37,26 @@ export default function App() {
     form.append("rule3", rule3);
 
     try {
-      const res = await fetch("http://localhost:8000/api/check", {
-        method: "POST",
-        body: form,
-      });
+  const API = import.meta.env.VITE_API_URL;
 
-      const data = await res.json();
+  const res = await fetch(`${API}/api/check`, {
+    method: "POST",
+    body: form,
+  });
 
-      if (!res.ok) {
-        setError(data.error || "Server error");
-      } else {
-        setResults(data.result || data.raw || []);
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const data = await res.json();
+
+  if (!res.ok) {
+    setError(data.error || "Server error");
+  } else {
+    setResults(data.result || data.raw || []);
+  }
+} catch (err) {
+  setError(err.message);
+} finally {
+  setLoading(false);
+}
+;
 
   return (
     <div className="app-container">
