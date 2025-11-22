@@ -22,7 +22,9 @@ app.use(
   })
 );
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
 // Ensure uploads directory exists
 const UPLOAD_DIR = path.resolve('uploads');
 if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
