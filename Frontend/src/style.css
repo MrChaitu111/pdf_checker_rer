@@ -1,0 +1,128 @@
+/* Global Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f6fa;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Main Container */
+.app-container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.app-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* File Input */
+.file-input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+/* Text Inputs */
+.text-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px;
+  margin-top: 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #005fcc;
+}
+
+.submit-btn:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-box {
+  margin-top: 20px;
+  padding: 12px;
+  color: white;
+  background: #e74c3c;
+  border-radius: 8px;
+}
+
+/* Results Section */
+.results-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Styled Table */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.results-table th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.results-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.results-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Status Colors */
+.status-pass {
+  font-weight: 600;
+  color: green;
+}
+
+.status-fail {
+  font-weight: 600;
+  color: red;
+}
+
+/* Center Content */
+.center {
+  text-align: center;
+}
