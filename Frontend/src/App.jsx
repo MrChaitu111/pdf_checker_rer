@@ -4,7 +4,6 @@ import "./style.css";
 export default function App() {
   const [file, setFile] = useState(null);
 
-  // Rule inputs
   const [rule1, setRule1] = useState("");
   const [rule2, setRule2] = useState("");
   const [rule3, setRule3] = useState("");
@@ -13,7 +12,6 @@ export default function App() {
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
 
-  // Dropdown rule options
   const easyRules = [
     "The document must have a purpose section.",
     "The document must mention at least one date.",
@@ -37,26 +35,27 @@ export default function App() {
     form.append("rule3", rule3);
 
     try {
-  const API = import.meta.env.VITE_API_URL;
+      // IMPORTANT: load backend URL from Vite env variable
+      const API = import.meta.env.VITE_API_URL;
 
-  const res = await fetch(`${API}/api/check`, {
-    method: "POST",
-    body: form,
-  });
+      const res = await fetch(`${API}/api/check`, {
+        method: "POST",
+        body: form,
+      });
 
-  const data = await res.json();
+      const data = await res.json();
 
-  if (!res.ok) {
-    setError(data.error || "Server error");
-  } else {
-    setResults(data.result || data.raw || []);
-  }
-} catch (err) {
-  setError(err.message);
-} finally {
-  setLoading(false);
-}
-;
+      if (!res.ok) {
+        setError(data.error || "Server error");
+      } else {
+        setResults(data.result || data.raw || []);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }; // <-- THIS WAS MISSING IN YOUR CODE
 
   return (
     <div className="app-container">
@@ -74,10 +73,7 @@ export default function App() {
 
         {/* Rule Select 1 */}
         <label>Select Rule 1</label>
-        <select
-          className="text-input"
-          onChange={(e) => setRule1(e.target.value)}
-        >
+        <select className="text-input" onChange={(e) => setRule1(e.target.value)}>
           <option value="">-- Select a Rule --</option>
           {easyRules.map((r, i) => (
             <option key={i} value={r}>{r}</option>
@@ -86,10 +82,7 @@ export default function App() {
 
         {/* Rule Select 2 */}
         <label>Select Rule 2</label>
-        <select
-          className="text-input"
-          onChange={(e) => setRule2(e.target.value)}
-        >
+        <select className="text-input" onChange={(e) => setRule2(e.target.value)}>
           <option value="">-- Select a Rule --</option>
           {easyRules.map((r, i) => (
             <option key={i} value={r}>{r}</option>
@@ -98,10 +91,7 @@ export default function App() {
 
         {/* Rule Select 3 */}
         <label>Select Rule 3</label>
-        <select
-          className="text-input"
-          onChange={(e) => setRule3(e.target.value)}
-        >
+        <select className="text-input" onChange={(e) => setRule3(e.target.value)}>
           <option value="">-- Select a Rule --</option>
           {easyRules.map((r, i) => (
             <option key={i} value={r}>{r}</option>
