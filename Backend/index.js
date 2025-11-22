@@ -12,7 +12,7 @@ dotenv.config();
 
 const OPENAI_KEY = process.env.OPENAI_API_KEY || '';
 const PORT = process.env.PORT || 8000;
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://localhost:5173';
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'https://pdf-checker-rer-1.onrender.com/';
 
 const app = express();
 app.use(
