@@ -22,7 +22,7 @@ PDF text extraction + OpenAI rule evaluation
 
 Frontend: https://pdf-checker-rer-1.onrender.com
 
-Backend API: https://pdf-checker-rer.onrender.com/api/check
+Backend API: https://pdf-checker-rer.onrender.com
 
 
 
@@ -30,14 +30,14 @@ Backend API: https://pdf-checker-rer.onrender.com/api/check
 🏗 Project Structure
 project/
 │
-├── frontend/               # React + Vite app
+├── frontend/             
 │   ├── src/
 │   │   ├── App.jsx
 │   │   └── style.css
 │   ├── index.html
 │   └── package.json
 │
-└── backend/                # Node.js + Express API
+└── backend/              
     ├── index.js
     ├── extrack.js
     ├── uploads/
