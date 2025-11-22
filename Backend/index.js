@@ -17,7 +17,7 @@ const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'https://pdf-checker-rer-
 const app = express();
 app.use(
   cors({
-    origin: FRONTEND_ORIGIN,
+    origin: process.env.FRONTEND_ORIGIN,
     methods: ['GET', 'POST', 'OPTIONS']
   })
 );
